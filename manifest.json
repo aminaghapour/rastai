@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "RastAI",
+  "description": "ترتیب نمایش کلمات، اعداد و اصطلاحات انگلیسی داخل متن فارسی را در چت‌بات‌های هوش مصنوعی وب (ChatGPT، Claude، Gemini، Perplexity و مشابه) اصلاح می‌کند.",
+  "version": "1.3.0",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://*.claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://bard.google.com/*",
+        "https://www.perplexity.ai/*",
+        "https://perplexity.ai/*",
+        "https://poe.com/*",
+        "https://copilot.microsoft.com/*",
+        "https://www.bing.com/chat*",
+        "https://chat.mistral.ai/*",
+        "https://chat.deepseek.com/*",
+        "https://grok.com/*",
+        "https://huggingface.co/chat*",
+        "https://you.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "RastAI"
+  }
+}
